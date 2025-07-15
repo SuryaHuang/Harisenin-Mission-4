@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List Page</title>
+    <link
+      rel=" shortcut icon"
+      href="../images/title.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/list-todo_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="welcome">
+      <p id="welcomeMessage"></p>
+      <p id="welcomeMessage2"></p>
+      </div>
+      <div class="date-clock-container">
+        <div class="date-container">
+        <span id="dateNow" class="date"></span>&nbsp;
+      </div>
+      <div class="clock-container">
+        <span>Jam :</span><span id="clock" class="clock"></span>
+      </div>
+      </div>
+      <div class="logout">
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </nav>
+    
+    
+    
+
+    <main class="container">
+      <div class="container-window">
+        <div class="todo-list-header">
+          <h2>To Do List</h2>
+          <div class="add-container">
+            <button class="add-btn" onclick="openForm()">Add Task</button>
+          </div>
+        </div>
+        <div id="overlay" class="overlay"></div>
+        <div id="popupForm" class="popupForm">
+          <label>Task :</label><br />
+          <input type="text" id="textInput" required /><br /><br />
+          
+          <label>Tanggal & Jam :</label><br />
+          <input type="datetime-local" id="dateTimeInput"></input><br /><br />
+
+          <label>Prioritas :</label><br />
+          <select id="priorityInput">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select><br /><br />
+          <div class="btn-container">
+            <button class="btn1" onclick="submitData()">Tambahkan</button>
+            <button class="btn2" onclick="closeForm()">Batal</button>
+          </div>
+          
+        </div>
+        <div class="todo-list-window">
+          <ul id="list-container">
+            
+          </ul>
+        </div>
+
+        <div class="task-done-header">
+          <h2>Task Done</h2>
+        </div>
+        <div class="task-done-window">
+          <div id="done-container">
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  
+  <script src="../js/list-todo.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <link
+      rel=" shortcut icon"
+      href="../images/title.png"
+      type="image/x-icon"
+    />
+  <link rel="stylesheet" href="../css/register_style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="prefetch" href="../index.html">
+</head>
+
+<body class="content">
+  <div class="wrapper">
+    <div class="form-box-register">
+      <section class="register-header">
+        <h2 class="register-title">REGISTER</h2>
+        <p class="welcome-message">Selamat datang</p>
+      </section>
+      
+      <section class="register-form">
+        <form id="registerForm">
+          <div class="input-box">
+            <span class="icon person"><ion-icon name="person"></ion-icon></span>
+            <input type="text" class="inputField" id="regUser" required />
+            <label>Username</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="eye-off-outline" class="eye"></ion-icon></span>
+            <input type="password" class="inputField" id="regPass" required />
+            <label>Password</label>
+          </div>
+          <div class="input-box">
+            <span class="icon eye"><ion-icon name="people"></ion-icon></span>
+            <input type="text" class="inputField" id="regJabatan" required />
+            <label>Jabatan</label>
+          </div>
+          <div class="login-register">
+            <p>Sudah punya akun? <a href="../index.html" class="login-link">Masuk</a></p>
+          </div>
+          <button type="submit" class="btn">Daftar</button>
+        </form>
+      </section>
+  </div>
+
+
+  <script src="../js/register.js"></script>
+
+  <!-- ionicons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+</body>
+</html>
