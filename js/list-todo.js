@@ -25,6 +25,9 @@ function openForm() {
 }
 
 function closeForm() {
+  textInput.value = "";
+  dateTimeInput.value = "";
+  priorityInput.value = "High";
   document.getElementById("popupForm").style.display = "none";
   document.getElementById("overlay").style.display = "none";
 }
@@ -41,9 +44,6 @@ function submitData() {
     allTasks[user.username].todo.push(newTask);
     localStorage.setItem("tasks", JSON.stringify(allTasks));
 
-    textInput.value = "";
-    dateTimeInput.value = "";
-    priorityInput.value = "High";
     closeForm();
     renderTasks();
   }
