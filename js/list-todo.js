@@ -86,6 +86,13 @@ function renderTasks() {
   });
 }
 
+function deleteAllTasks() {
+  allTasks[user.username].todo = [];
+  allTasks[user.username].done = [];
+  localStorage.setItem("tasks", JSON.stringify(allTasks));
+  renderTasks();
+}
+
 document
   .getElementById("list-container")
   .addEventListener("click", function (e) {
