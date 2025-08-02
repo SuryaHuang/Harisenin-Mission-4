@@ -57,7 +57,9 @@ function pad2(number) {
 function renderTasks() {
   const todoList = document.getElementById("list-container");
   const doneList = document.getElementById("done-container");
+  const resetFilter = document.getElementById("filterDate");
 
+  resetFilter.value = "";
   todoList.innerHTML = "";
   doneList.innerHTML = "";
 
@@ -91,6 +93,52 @@ function deleteAllTasks() {
   allTasks[user.username].done = [];
   localStorage.setItem("tasks", JSON.stringify(allTasks));
   renderTasks();
+}
+
+flatpickr("#filterDate", {
+  dateFormat: "d-m-Y",
+  disableMobile: true,
+  onChange: function (selectedDates, dateStr) {
+    filterTasksByDate(dateStr);
+  },
+});
+
+function filterTasksByDate(selectedDate) {
+  const todoList = document.getElementById("list-container");
+  const doneList = document.getElementById("done-container");
+
+  todoList.innerHTML = "";
+  doneList.innerHTML = "";
+
+  const formatOnlyDate = (dateTimeStr) => dateTimeStr.split(" ")[0]; // Ambil bagian tanggal saja
+
+  allTasks[user.username].todo.forEach((task, index) => {
+    if (formatOnlyDate(task.dateTime) === selectedDate) {
+      const li = document.createElement("li");
+      li.className = "entry";
+      li.innerHTML = `
+        <span class="besar">Task: </span> <span class="besar1">${task.text}</span> <span class="delete">\u00d7</span><br>
+        <strong>Tanggal & Jam: </strong> <span class="kecil">${task.dateTime}</span>
+        <strong>Prioritas: </strong> <span class="kecil">${task.priority}</span>
+      `;
+      li.dataset.index = index;
+      todoList.appendChild(li);
+    }
+  });
+
+  allTasks[user.username].done.forEach((task, index) => {
+    if (formatOnlyDate(task.dateTime) === selectedDate) {
+      const div2 = document.createElement("div");
+      div2.className = "entry div2";
+      div2.innerHTML = `
+        <span class="besar checked">Task: </span> <span class="besar1 checked">${task.text}</span> <span class="delete2">\u00d7</span><br>
+        <strong class="checked2">Tanggal & Jam: </strong> <span class="kecil checked2">${task.dateTime}</span>
+        <strong class="checked2">Prioritas: </strong> <span class="kecil checked2">${task.priority}</span>
+      `;
+      div2.dataset.index = index;
+      doneList.appendChild(div2);
+    }
+  });
 }
 
 document

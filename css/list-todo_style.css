@@ -91,7 +91,7 @@
   max-width: 800px;
   background-color: #eaeaea;
   margin: 100px auto 50px;
-  padding: 40px 50px 10px;
+  padding: 10px 50px 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: all 0.8s ease-in-out;
@@ -384,7 +384,80 @@ ul li::before {
   color: #555;
 }
 
+#filterDate {
+  width: 100px;
+  height: auto;
+  letter-spacing: 0.5px;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.filterLabel {
+  font-size: 0.9em;
+  padding-right: 5px;
+}
+
+.dateFilter {
+  margin-bottom: -12.5px;
+}
+
+.right-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  padding-left: -20px;
+}
+
+.resetbtn {
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #1e1e2f;
+  color: #eaeaea;
+  border: none;
+  cursor: pointer;
+  font-size: 0.6em;
+  vertical-align: top;
+}
+
+.todoTitle {
+  padding-top: 30px;
+  padding-right: 50px;
+  flex: 0 1 auto;
+  max-width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 @media (max-width: 576px) {
+  #filterDate {
+    width: 100px;
+    height: auto;
+    letter-spacing: 0.5px;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+
+  .filterLabel {
+    font-size: 0.7em;
+    margin-left: -10px;
+  }
+
+  .todoTitle {
+    font-size: 1.2em;
+    margin-right: 10px;
+  }
+
+  .doneTitle {
+    font-size: 1em;
+  }
+
   .welcome {
     font-size: 0.7em;
   }
@@ -408,14 +481,33 @@ ul li::before {
     font-size: 0.7em;
   }
 
+  .todo-list-header {
+    font-size: 0.8em;
+  }
+
   .popupForm {
     margin: -70px -10px;
     transition: all 0.8s ease-in-out;
     min-height: 300px;
   }
 
+  .add-btn {
+    width: 60px;
+    height: 25px;
+    font-size: 9px;
+    margin-top: 5px;
+  }
+
+  .del-btn {
+    width: 80px;
+    height: 25px;
+    font-size: 9px;
+    /* margin-left: 50px; */
+    margin-top: 5px;
+  }
+
   .container-window {
-    padding: 40px 15px 10px;
+    padding: 10px 15px 10px;
     transition: all 0.8s ease-in-out;
   }
 

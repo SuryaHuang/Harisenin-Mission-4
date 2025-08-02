@@ -44,10 +44,17 @@
     <main class="container">
       <div class="container-window">
         <div class="todo-list-header">
-          <h2>To Do List</h2>
+          <h2 class="todoTitle">To Do</h2>
+          <div class="right-control">
+            <div class="dateFilter">
+              <label for="filterDate" class="filterLabel">Date Filter :</label>
+              <input name="filterDate" type="text" id="filterDate" placeholder="" />
+              <button class="resetbtn" onclick="renderTasks()">Reset</button>
+            </div>
           <div class="add-container">
             <button class="del-btn" onclick="deleteAllTasks()">Delete All Task</button>
             <button class="add-btn" onclick="openForm()">Add Task</button>
+          </div>
           </div>
         </div>
         <div id="overlay" class="overlay"></div>
@@ -77,7 +84,7 @@
         </div>
 
         <div class="task-done-header">
-          <h2>Task Done</h2>
+          <h2 class="doneTitle" >Task Done</h2>
         </div>
         <div class="task-done-window">
           <div id="done-container">
